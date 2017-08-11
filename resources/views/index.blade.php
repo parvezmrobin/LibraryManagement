@@ -19,6 +19,10 @@
             .text-border:hover {
                 text-shadow: none;
             }
+
+            .btn-circle {
+                box-shadow: -1px -1px black
+            }
         }
     </style>
 @endsection
@@ -45,7 +49,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Library Management</h1>
+                        <h1 class="brand-heading">{{config('app.name', 'Library Management')}}</h1>
                         <form action="{{url('home')}}" class="form-horizontal">
                             <div class="input-group">
                                 <span class="input-group-addon" style="border-radius: 1px"><i
@@ -109,7 +113,7 @@
         <div class="download-section" style="background: url({{asset('img/author-bg.jpg')}}) bottom center no-repeat #000;">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Author</h2>
+                    <h2 class="text-border">Author</h2>
                     <div>
                         @foreach(\App\Author::all() as $author)
                             <a href="#" class="btn btn-default btn-lg text-border"
@@ -118,7 +122,7 @@
                             </a>
                         @endforeach
                     </div>
-                    <a href="#contact" class="btn btn-circle page-scroll text-border" style="box-shadow: -1px -1px black">
+                    <a href="#contact" class="btn btn-circle page-scroll text-border">
                         <i class="fa fa-angle-double-down animated"></i>
                     </a>
                 </div>
